@@ -367,9 +367,9 @@ const useAppStore = defineStore('app', () => {
     return val !== undefined ? Boolean(val) : true
   })
 
-  const ipqaShowChanges = computed<boolean>(() => {
-    const val = publicSettings.value?.theme_settings?.ipqa_show_changes
-    return val !== undefined ? Boolean(val) : true
+  const ipqaShowHomeBadge = computed<boolean>(() => {
+    const val = publicSettings.value?.theme_settings?.ipqa_show_home_badge
+    return val !== undefined ? Boolean(val) : false
   })
 
   return {
@@ -413,6 +413,7 @@ const useAppStore = defineStore('app', () => {
     ipqaShowRiskMatrix,
     ipqaShowMediaMatrix,
     ipqaShowChanges,
+    ipqaShowHomeBadge,
     isLoggedIn,
     publicSettings,
     connectionError,

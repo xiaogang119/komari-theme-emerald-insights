@@ -14,6 +14,7 @@ import { formatDateTime, getStatus } from '@/utils/helper'
 import { getCustomTags, getDiskPercentage, getMemPercentage, getNodeTagDisplay, getPriceTags, getRemainingTimeTagClass, getTrafficUsed, getTrafficUsedPercentage, hasRegion, showTrafficProgress } from '@/utils/nodeHelpers'
 import { getOSImage, getOSName } from '@/utils/osImageHelper'
 import { getFlagSrc, getRegionDisplayName } from '@/utils/regionHelper'
+import IpqaHomeBadge from '@/features/ipqa/components/IpqaHomeBadge.vue'
 
 const props = defineProps<{ node: NodeData }>()
 
@@ -247,6 +248,7 @@ function openPingDialog() {
                 N/A
               </div>
             </div>
+            <IpqaHomeBadge v-if="appStore.ipqaShowHomeBadge" :uuid="props.node.uuid" />
             <div class="grid grid-cols-6 gap-x-3">
               <!-- 延迟 -->
               <div
